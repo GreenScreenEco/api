@@ -1,0 +1,12 @@
+# Python generated files
+__pycache__/
+
+# Python downloaded content
+env/
+venv/
+
+# Code editor
+.idea/
+
+# Project-specific files
+.env

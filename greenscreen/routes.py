@@ -19,7 +19,7 @@ class ErrorInfo(BaseModel):
     message: str
 
 
-@main.get("/scores")
+@main.get("/v1/scores")
 def scores_query(domain_name: str):
     db = DBConnection()
 

@@ -3,6 +3,5 @@ click~=8.1.2
 fastapi~=0.75.1
 pydantic~=1.9.0
 python-dotenv~=0.20.0
-python-Levenshtein~=0.12.2
-sqllex~=0.2.3
+sqllex~=0.3.0.post2
 uvicorn~=0.17.6

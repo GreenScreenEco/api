@@ -125,7 +125,6 @@ def guess_company_name(db: DBConnection, domain_name: dns.name.Name) -> Optional
 
 
 def _get_similarity_score(target: str, company_name: str) -> float:
-    # return Levenshtein.distance(a.lower(), b.lower())
     return 1 - SequenceMatcher(
         None,
         a=target.lower(),

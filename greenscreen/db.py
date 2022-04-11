@@ -20,7 +20,7 @@ class DBConnection:
         :param dsn: PostgreSQL Data Source Name
         """
         self._postgres = psycopg2.connect(dsn=dsn)
-        self._sx = sx.PostgreSQLx(connection=self._postgres)
+        self._sx = sx.PostgreSQLx(engine=psycopg2, connection=self._postgres)
 
     def raw(self):
         return self._postgres

@@ -1,5 +1,3 @@
-from typing import Optional
-
 import dns.name
 import dotenv
 from fastapi import FastAPI, Response, status

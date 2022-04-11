@@ -1,9 +1,8 @@
 import heapq
 from difflib import SequenceMatcher
-from typing import Optional, Set, Iterable, Dict, List
+from typing import Optional, Set, List
 
 import dns.name
-import Levenshtein
 
 from greenscreen.db import DBConnection
 from greenscreen.ingest import SRayEnterpriseSource

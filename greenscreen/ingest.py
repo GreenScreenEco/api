@@ -9,7 +9,7 @@ import sqllex as sx
 from psycopg2.errors import DuplicateTable, IntegrityError
 
 from greenscreen.db import DBConnection
-from greenscreen.models import ScoreSource
+from greenscreen.scores.types import ScoreSource
 
 
 class ScoreInputSchema(ABC):
@@ -55,7 +55,6 @@ class SRayEnterpriseSource(ScoreInputSchema):
                 if "extra" in row:
                     print(f"Row had extra data, truncating: {row}")
                     del row["extra"]
-                print(repr(row))
                 table.insert(**row)
                 n_success += 1
             except IntegrityError:

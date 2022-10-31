@@ -6,7 +6,7 @@ import dns.name
 
 from greenscreen.db import DBConnection
 from greenscreen.ingest import SRayEnterpriseSource
-from greenscreen.models import Score, ScoreSource
+from greenscreen.scores.types import ScoreSource, Score
 
 
 def get_scores_for_company(db: DBConnection, company_name: str) -> List[Score]:

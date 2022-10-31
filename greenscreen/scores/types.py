@@ -1,5 +1,3 @@
-from typing import List
-
 from pydantic import BaseModel
 
 
@@ -19,9 +17,3 @@ class Score(BaseModel):
 
 class Company(BaseModel):
     name: str
-
-
-class ScoreSummary(BaseModel):
-    company: Company
-    main_score: Score
-    score_components: List[Score]

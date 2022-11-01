@@ -1,5 +1,6 @@
 import dotenv
 from fastapi import FastAPI
+from starlette.middleware.cors import CORSMiddleware
 
 from greenscreen.companies import query_companies_handler
 from greenscreen.scores import get_scores_handler
@@ -7,6 +8,13 @@ from greenscreen.scores import get_scores_handler
 dotenv.load_dotenv()
 
 main = FastAPI()
+
+main.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @main.get("/v1/scores")

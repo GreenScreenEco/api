@@ -27,6 +27,9 @@ class CompaniesQueryResponse(BaseModel):
 def companies_query(search_text: str = None):
     db = DBConnection()
 
+    if search_text == "":
+        search_text = None
+
     company_names = find_company_names(db, search_text)
     company_details: List[CompanyDetails] = []
     for company_name in company_names:

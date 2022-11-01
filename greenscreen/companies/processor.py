@@ -19,17 +19,17 @@ def find_company_names(db: DBConnection, search_text: str = None) -> List[str]:
                 return 1
         return None
 
-    matched_names: List[Tuple[int, str]] = []
+    matched_names: List[Tuple[int, str, str]] = []
     for row in rows:
         company_name: str = row[0]
         if search_text is not None:
             match_priority = match_company(company_name.lower(), search_text.lower())
             if match_priority is not None:
-                matched_names.append((match_priority, company_name))
+                matched_names.append((match_priority, company_name.lower(), company_name))
         else:
-            matched_names.append((0, company_name))
+            matched_names.append((0, company_name.lower(), company_name))
 
     matched_names.sort()
 
-    return [match[1] for match in matched_names]
+    return [match[2] for match in matched_names]
 
